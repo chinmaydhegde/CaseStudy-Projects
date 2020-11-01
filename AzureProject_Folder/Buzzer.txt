@@ -1,0 +1,29 @@
+int freq=0;
+int channel = 0;
+int resolution = 0;
+ 
+void setup() {
+ 
+  Serial.begin(9600);
+  ledcSetup(channel,freq,  resolution);
+  ledcAttachPin(32, channel);
+ 
+}
+ 
+void loop() {
+ 
+  ledcWriteTone(channel, 2000);
+ 
+  for (int dutyCycle = 0; dutyCycle <= 0; dutyCycle=dutyCycle+0){
+ 
+    Serial.println(dutyCycle);
+ 
+    ledcWrite(channel, dutyCycle);
+    delay(1000);
+  }
+ 
+  
+ 
+  
+ 
+}
